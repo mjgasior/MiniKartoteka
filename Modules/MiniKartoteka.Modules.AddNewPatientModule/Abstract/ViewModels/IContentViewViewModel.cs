@@ -4,5 +4,6 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels
 {
     public interface IContentViewViewModel : IViewModel
     {
+        string Message { get; set; }
     }
 }

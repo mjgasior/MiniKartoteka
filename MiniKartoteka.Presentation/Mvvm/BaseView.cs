@@ -20,7 +20,7 @@ namespace MiniKartoteka.Presentation.Mvvm
 
         public BaseView(IViewModel viewModel)
         {
-            
+            ViewModel = viewModel;    
         }
     }
 }

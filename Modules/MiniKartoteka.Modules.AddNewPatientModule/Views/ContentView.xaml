@@ -8,6 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="Lime">
-            
+        <TextBlock Text="{Binding Message}" Background="Purple" Foreground="Lime" Margin="18" MouseDown="TextBlock_MouseDown"/>
     </Grid>
 </bv:BaseView>
