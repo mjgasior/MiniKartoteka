@@ -9,19 +9,23 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.ViewModels
     public class ContentViewViewModel : BindableBase, IContentViewViewModel
     {
         #region Properties
-        public DelegateCommand SaveCommand { get; private set; }
+        public DelegateCommand<object> SaveCommand { get; private set; }
 
         private Person _person;
         public Person Person
         {
             get { return _person; }
-            set { SetProperty(ref _person, value); }
-        }
+            set
+            {
+                value.PropertyChanged += OnPersonPropertyChanged;
+                SetProperty(ref _person, value);
+            }
+        }        
         #endregion Properties
 
         public ContentViewViewModel()
         {
-            SaveCommand = new DelegateCommand(OnSave, CanSave);
+            SaveCommand = new DelegateCommand<object>(OnSave, CanSave);
             Person = new Person
             {
                 FirstName = "Bob",
@@ -30,15 +34,22 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.ViewModels
             };
         }
 
-        #region Commands
-        private bool CanSave()
+        #region Events
+        private void OnPersonPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            return true;
+            SaveCommand.RaiseCanExecuteChanged();
+        }
+        #endregion Events
+
+        #region Commands
+        private bool CanSave(object parameter)
+        {
+            return Person.Error == null;
         }
 
-        private void OnSave()
+        private void OnSave(object parameter)
         {
-            
+            Person.LastUpdated = DateTime.Now.AddYears(Convert.ToInt32(parameter));
         }
         #endregion Commands
     }

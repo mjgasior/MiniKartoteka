@@ -64,15 +64,21 @@ namespace MiniKartoteka.Business.Models.Personal
                         }
                         break;
                 }
+                Error = error;
                 return error;
             }
         }
 
+        private string _error;
         public string Error
         {
             get
             {
-                return null;
+                return _error;
+            }
+            private set
+            {
+                SetProperty(ref _error, value);
             }
         }
         #endregion IDataErrorInfo

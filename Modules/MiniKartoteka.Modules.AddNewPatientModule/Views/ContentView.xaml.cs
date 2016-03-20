@@ -13,10 +13,5 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.Views
         {
             InitializeComponent();
         }
-
-        private void TextBlock_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
-        }
     }
 }

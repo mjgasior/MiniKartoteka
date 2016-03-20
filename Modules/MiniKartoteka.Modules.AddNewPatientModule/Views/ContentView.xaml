@@ -17,8 +17,8 @@
         <TextBox Text="{Binding Person.Age, Mode=TwoWay, ValidatesOnDataErrors=True}"/>
 
         <Label Margin="8">Last Update</Label>
-        <Label Content="{Binding Person.LastUpdate}"/>
+        <Label Content="{Binding Person.LastUpdated}"/>
 
-        <Button Command="{Binding SaveCommand}" Content="Save"/>
+        <Button Command="{Binding SaveCommand}" Content="Save" CommandParameter="2"/>
     </UniformGrid>
 </bv:BaseView>

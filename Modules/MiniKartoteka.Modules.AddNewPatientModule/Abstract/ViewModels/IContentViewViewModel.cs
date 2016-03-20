@@ -6,7 +6,7 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels
 {
     public interface IContentViewViewModel : IViewModel
     {
-        DelegateCommand SaveCommand { get; }
+        DelegateCommand<object> SaveCommand { get; }
         Person Person { get; set; }
     }
 }
