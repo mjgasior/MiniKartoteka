@@ -25,7 +25,7 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
             var view = Container.Resolve<ContentView>();
             (view.ViewModel as IContentViewViewModel).Message = "My first message";
 
-            IRegion contentRegion = this.RegionManager.Regions[RegionNames.CONTENT_REGION];
+            IRegion contentRegion = RegionManager.Regions[RegionNames.CONTENT_REGION];
             contentRegion.Add(view); // View injection
 
             // Switching views
