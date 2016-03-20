@@ -3,6 +3,9 @@ using Prism.Regions;
 using Microsoft.Practices.Unity;
 using MiniKartoteka.Modules.AddNewPatientModule.Views;
 using MiniKartoteka.Infrastructure;
+using MiniKartoteka.Modules.AddNewPatientModule.Abstract.Views;
+using MiniKartoteka.Modules.AddNewPatientModule.ViewModels;
+using MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule
 {
@@ -19,6 +22,9 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
 
         public void Initialize()
         {
+            _unityContainer.RegisterType<IContentView, ContentView>();
+            _unityContainer.RegisterType<IContentViewViewModel, ContentViewViewModel>();
+
             //_regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(Toolbar));
             IRegion toolbarRegion = _regionManager.Regions[RegionNames.TOOLBAR_REGION];
             toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
@@ -29,6 +35,7 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
             toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
 
             _regionManager.RegisterViewWithRegion(RegionNames.CONTENT_REGION, typeof(ContentView));
+            
         }
     }
 }
