@@ -24,7 +24,6 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
         {
             _unityContainer.RegisterType<IContentViewViewModel, ContentViewViewModel>();
 
-            //_regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(Toolbar)); // View discovery
             IRegion toolbarRegion = _regionManager.Regions[RegionNames.TOOLBAR_REGION]; // View injection
             toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
             toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
@@ -34,10 +33,18 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
             toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
 
             var view = _unityContainer.Resolve<ContentView>();
-            (view.ViewModel as IContentViewViewModel).Message = "My message";
+            (view.ViewModel as IContentViewViewModel).Message = "My first message";
 
-            _regionManager.Regions[RegionNames.CONTENT_REGION].Add(view); // View injection
-            
+            IRegion contentRegion = _regionManager.Regions[RegionNames.CONTENT_REGION];
+            contentRegion.Add(view); // View injection
+
+            // Switching views
+            var view2 = _unityContainer.Resolve<ContentView>();
+            (view2.ViewModel as IContentViewViewModel).Message = "My second message";
+
+            contentRegion.Add(view2);
+            contentRegion.Deactivate(view);
+            contentRegion.Activate(view2);
         }
     }
 }
