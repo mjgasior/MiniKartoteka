@@ -2,7 +2,7 @@
 
 namespace MiniKartoteka.Modules.AddNewPatientModule.Abstract.Views
 {
-    interface IContentView : IView
+    public interface IContentView : IView
     {
     }
 }

@@ -3,28 +3,16 @@ using System.Windows.Controls;
 using MiniKartoteka.Infrastructure.Abstract.Mvvm;
 using System;
 using MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels;
+using MiniKartoteka.Presentation.Mvvm;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule.Views
 {
     /// <summary>
     /// Interaction logic for ContentView.xaml
     /// </summary>
-    public partial class ContentView : UserControl, IContentView
+    public partial class ContentView : BaseView, IContentView
     {
-        public IViewModel ViewModel
-        {
-            get
-            {
-                return (IContentViewViewModel)DataContext;
-            }
-
-            set
-            {
-                DataContext = value;
-            }
-        }
-
-        public ContentView()
+        public ContentView(IContentViewViewModel viewModel) : base(viewModel)
         {
             InitializeComponent();
         }
