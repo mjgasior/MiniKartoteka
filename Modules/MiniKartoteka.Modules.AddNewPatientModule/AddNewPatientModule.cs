@@ -22,19 +22,9 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
             toolbarRegion.Add(Container.Resolve<ToolbarView>());
             toolbarRegion.Add(Container.Resolve<ToolbarView>());
 
-            var view = Container.Resolve<ContentView>();
-            (view.ViewModel as IContentViewViewModel).Message = "My first message";
-
             IRegion contentRegion = RegionManager.Regions[RegionNames.CONTENT_REGION];
-            contentRegion.Add(view); // View injection
+            contentRegion.Add(Container.Resolve<ContentView>());
 
-            // Switching views
-            var view2 = Container.Resolve<ContentView>();
-            (view2.ViewModel as IContentViewViewModel).Message = "My second message";
-
-            contentRegion.Add(view2);
-            contentRegion.Deactivate(view);
-            contentRegion.Activate(view2);
         }
     }
 }

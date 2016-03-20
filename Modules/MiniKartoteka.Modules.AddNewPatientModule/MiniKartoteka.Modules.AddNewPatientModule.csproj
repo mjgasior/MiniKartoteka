@@ -88,6 +88,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\MiniKartoteka.Business.Models\MiniKartoteka.Business.Models.csproj">
+      <Project>{48fcfbc1-0932-4fda-8675-ecd38c9726e4}</Project>
+      <Name>MiniKartoteka.Business.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MiniKartoteka.Infrastructure\MiniKartoteka.Infrastructure.csproj">
       <Project>{7526f495-deb0-4f83-8ae8-80f0286b0358}</Project>
       <Name>MiniKartoteka.Infrastructure</Name>

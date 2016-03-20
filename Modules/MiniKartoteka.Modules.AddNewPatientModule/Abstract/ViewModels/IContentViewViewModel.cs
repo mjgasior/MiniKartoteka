@@ -1,9 +1,12 @@
-﻿using MiniKartoteka.Infrastructure.Abstract.Mvvm;
+﻿using MiniKartoteka.Business.Models.Personal;
+using MiniKartoteka.Infrastructure.Abstract.Mvvm;
+using Prism.Commands;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels
 {
     public interface IContentViewViewModel : IViewModel
     {
-        string Message { get; set; }
+        DelegateCommand SaveCommand { get; }
+        Person Person { get; set; }
     }
 }

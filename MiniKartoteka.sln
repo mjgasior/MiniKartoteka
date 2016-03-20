@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Presentation"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Modules.StatusBar", "Modules\MiniKartoteka.Modules.StatusBar\MiniKartoteka.Modules.StatusBar.csproj", "{6A63AC82-FB23-4132-88EA-14576A10C2D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Business.Models", "Business\MiniKartoteka.Business.Models\MiniKartoteka.Business.Models.csproj", "{48FCFBC1-0932-4FDA-8675-ECD38C9726E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{6A63AC82-FB23-4132-88EA-14576A10C2D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A63AC82-FB23-4132-88EA-14576A10C2D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A63AC82-FB23-4132-88EA-14576A10C2D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FCFBC1-0932-4FDA-8675-ECD38C9726E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FCFBC1-0932-4FDA-8675-ECD38C9726E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FCFBC1-0932-4FDA-8675-ECD38C9726E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FCFBC1-0932-4FDA-8675-ECD38C9726E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D78EA507-C73F-4A10-BABA-AB633903FB93} = {7CBE9310-E88D-4083-A339-E9354A072C65}
 		{6A63AC82-FB23-4132-88EA-14576A10C2D7} = {7CBE9310-E88D-4083-A339-E9354A072C65}
+		{48FCFBC1-0932-4FDA-8675-ECD38C9726E4} = {A5434D28-4B3D-44B3-A127-54AD6BB5F58D}
 	EndGlobalSection
 EndGlobal
