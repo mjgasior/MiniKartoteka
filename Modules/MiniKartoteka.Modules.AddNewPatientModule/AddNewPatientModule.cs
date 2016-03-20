@@ -22,7 +22,7 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
 
         public void Initialize()
         {
-            _unityContainer.RegisterType<IContentView, ContentView>();
+            _unityContainer.RegisterType<ContentView>();
             _unityContainer.RegisterType<IContentViewViewModel, ContentViewViewModel>();
 
             //_regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(Toolbar));
