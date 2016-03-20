@@ -6,7 +6,6 @@ using MiniKartoteka.Infrastructure;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule
 {
-    //[Module(ModuleName = "ModuleMojPierwszy", OnDemand = true)]
     public class AddNewPatientModule : IModule
     {
         private readonly IRegionManager _regionManager;

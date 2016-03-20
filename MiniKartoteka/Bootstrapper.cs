@@ -24,18 +24,6 @@ namespace MiniKartoteka
             App.Current.MainWindow.Show();
         }
 
-        //protected override IModuleCatalog CreateModuleCatalog()
-        //{
-        //    ModuleCatalog catalog = new ModuleCatalog();
-        //    catalog.AddModule(typeof(AddNewPatientModule));
-        //    return catalog;       
-        //}
-
-        //protected override IModuleCatalog CreateModuleCatalog()
-        //{
-        //    return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
-        //}
-
         protected override void ConfigureModuleCatalog()
         {
             Type module = typeof(AddNewPatientModule);
