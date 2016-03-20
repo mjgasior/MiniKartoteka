@@ -22,5 +22,10 @@ namespace MiniKartoteka.Presentation.Mvvm
         {
             ViewModel = viewModel;    
         }
+
+        public BaseView()
+        {
+            // only for the sake of error messages
+        }
     }
 }

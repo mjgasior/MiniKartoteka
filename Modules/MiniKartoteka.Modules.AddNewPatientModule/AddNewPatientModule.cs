@@ -1,45 +1,35 @@
-﻿using Prism.Modularity;
-using Prism.Regions;
+﻿using Prism.Regions;
 using Microsoft.Practices.Unity;
 using MiniKartoteka.Modules.AddNewPatientModule.Views;
 using MiniKartoteka.Infrastructure;
-using MiniKartoteka.Modules.AddNewPatientModule.Abstract.Views;
 using MiniKartoteka.Modules.AddNewPatientModule.ViewModels;
 using MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels;
+using MiniKartoteka.Infrastructure.Concrete.Mvvm;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule
 {
-    public class AddNewPatientModule : IModule
+    public class AddNewPatientModule : BaseModule
     {
-        private readonly IRegionManager _regionManager;
-        private readonly IUnityContainer _unityContainer;
-
-        public AddNewPatientModule(IUnityContainer container, IRegionManager regionManager)
+        public override void Initialize()
         {
-            _unityContainer = container;
-            _regionManager = regionManager;
-        }
+            Container.RegisterType<IContentViewViewModel, ContentViewViewModel>();
 
-        public void Initialize()
-        {
-            _unityContainer.RegisterType<IContentViewViewModel, ContentViewViewModel>();
+            IRegion toolbarRegion = RegionManager.Regions[RegionNames.TOOLBAR_REGION]; // View injection
+            toolbarRegion.Add(Container.Resolve<ToolbarView>());
+            toolbarRegion.Add(Container.Resolve<ToolbarView>());
+            toolbarRegion.Add(Container.Resolve<ToolbarView>());
+            toolbarRegion.Add(Container.Resolve<ToolbarView>());
+            toolbarRegion.Add(Container.Resolve<ToolbarView>());
+            toolbarRegion.Add(Container.Resolve<ToolbarView>());
 
-            IRegion toolbarRegion = _regionManager.Regions[RegionNames.TOOLBAR_REGION]; // View injection
-            toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
-            toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
-            toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
-            toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
-            toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
-            toolbarRegion.Add(_unityContainer.Resolve<ToolbarView>());
-
-            var view = _unityContainer.Resolve<ContentView>();
+            var view = Container.Resolve<ContentView>();
             (view.ViewModel as IContentViewViewModel).Message = "My first message";
 
-            IRegion contentRegion = _regionManager.Regions[RegionNames.CONTENT_REGION];
+            IRegion contentRegion = this.RegionManager.Regions[RegionNames.CONTENT_REGION];
             contentRegion.Add(view); // View injection
 
             // Switching views
-            var view2 = _unityContainer.Resolve<ContentView>();
+            var view2 = Container.Resolve<ContentView>();
             (view2.ViewModel as IContentViewViewModel).Message = "My second message";
 
             contentRegion.Add(view2);

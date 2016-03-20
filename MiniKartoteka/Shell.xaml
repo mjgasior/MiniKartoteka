@@ -7,9 +7,15 @@
         xmlns:inf="clr-namespace:MiniKartoteka.Infrastructure;assembly=MiniKartoteka.Infrastructure"
         xmlns:local="clr-namespace:MiniKartoteka"
         mc:Ignorable="d" Title="Shell">
-    <UniformGrid Columns="1">
-        <TextBlock>HEllo World!</TextBlock>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
         <StackPanel Orientation="Horizontal" prism:RegionManager.RegionName="{x:Static inf:RegionNames.TOOLBAR_REGION}"/>
-        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}"/>
-    </UniformGrid>
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}" Grid.Row="1"/>
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="2"/>
+    </Grid>
 </Window>
