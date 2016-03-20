@@ -1,0 +1,15 @@
+﻿<Window x:Class="MiniKartoteka.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://www.codeplex.com/prism"
+        xmlns:inf="clr-namespace:MiniKartoteka.Infrastructure;assembly=MiniKartoteka.Infrastructure"
+        xmlns:local="clr-namespace:MiniKartoteka"
+        mc:Ignorable="d" Title="Shell">
+    <UniformGrid Columns="1">
+        <TextBlock>HEllo World!</TextBlock>
+        <StackPanel Orientation="Horizontal" prism:RegionManager.RegionName="{x:Static inf:RegionNames.TOOLBAR_REGION}"/>
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}"/>
+    </UniformGrid>
+</Window>

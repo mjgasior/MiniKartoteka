@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka", "MiniKartoteka\MiniKartoteka.csproj", "{051C695C-8417-4861-A6EF-6B99365DE675}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{A5434D28-4B3D-44B3-A127-54AD6BB5F58D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{7CBE9310-E88D-4083-A339-E9354A072C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Infrastructure", "MiniKartoteka.Infrastructure\MiniKartoteka.Infrastructure.csproj", "{7526F495-DEB0-4F83-8AE8-80F0286B0358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Modules.AddNewPatientModule", "Modules\MiniKartoteka.Modules.AddNewPatientModule\MiniKartoteka.Modules.AddNewPatientModule.csproj", "{D78EA507-C73F-4A10-BABA-AB633903FB93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{051C695C-8417-4861-A6EF-6B99365DE675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051C695C-8417-4861-A6EF-6B99365DE675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051C695C-8417-4861-A6EF-6B99365DE675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051C695C-8417-4861-A6EF-6B99365DE675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7526F495-DEB0-4F83-8AE8-80F0286B0358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7526F495-DEB0-4F83-8AE8-80F0286B0358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7526F495-DEB0-4F83-8AE8-80F0286B0358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7526F495-DEB0-4F83-8AE8-80F0286B0358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78EA507-C73F-4A10-BABA-AB633903FB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78EA507-C73F-4A10-BABA-AB633903FB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78EA507-C73F-4A10-BABA-AB633903FB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78EA507-C73F-4A10-BABA-AB633903FB93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D78EA507-C73F-4A10-BABA-AB633903FB93} = {7CBE9310-E88D-4083-A339-E9354A072C65}
+	EndGlobalSection
+EndGlobal
