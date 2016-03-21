@@ -8,6 +8,7 @@ using Prism.Modularity;
 using MiniKartoteka.Modules.AddNewPatientModule;
 using System;
 using MiniKartoteka.Modules.StatusBar;
+using MiniKartoteka.Business.Services;
 
 namespace MiniKartoteka
 {
@@ -28,6 +29,8 @@ namespace MiniKartoteka
 
         protected override void ConfigureModuleCatalog()
         {
+            RegisterModule(typeof(ServicesModule));
+
             RegisterModule(typeof(AddNewPatientModule));
             RegisterModule(typeof(StatusBarModule));
         }

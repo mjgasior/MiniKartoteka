@@ -128,6 +128,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\MiniKartoteka.Business.Services\MiniKartoteka.Business.Services.csproj">
+      <Project>{095297ae-aa48-4e36-9239-6fc8086e3600}</Project>
+      <Name>MiniKartoteka.Business.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MiniKartoteka.Infrastructure\MiniKartoteka.Infrastructure.csproj">
       <Project>{7526f495-deb0-4f83-8ae8-80f0286b0358}</Project>
       <Name>MiniKartoteka.Infrastructure</Name>

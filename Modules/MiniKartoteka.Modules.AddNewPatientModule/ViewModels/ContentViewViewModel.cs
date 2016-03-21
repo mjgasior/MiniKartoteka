@@ -6,6 +6,7 @@ using Prism.Mvvm;
 using Prism.Events;
 using Microsoft.Practices.Unity;
 using MiniKartoteka.Infrastructure;
+using MiniKartoteka.Infrastructure.Abstract.Services;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule.ViewModels
 {
@@ -14,6 +15,9 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.ViewModels
         #region Properties
         [Dependency]
         public IEventAggregator EventAggregator { get; set; }
+
+        [Dependency]
+        public IPatientRepository PatientRepository { get; set; }
 
         public DelegateCommand<object> SaveCommand { get; private set; }
 
@@ -59,8 +63,8 @@ namespace MiniKartoteka.Modules.AddNewPatientModule.ViewModels
 
         private void OnSave(object parameter)
         {
-            Person.LastUpdated = DateTime.Now.AddYears(Convert.ToInt32(parameter));
-
+            //Person.LastUpdated = DateTime.Now.AddYears(Convert.ToInt32(parameter));
+            PatientRepository.SavePerson(Person);
             EventAggregator.GetEvent<PersonUpdatedEvent>().Publish(string.Format("{0} {1} was updated!", Person.FirstName, Person.LastName));
         }
         #endregion Commands
