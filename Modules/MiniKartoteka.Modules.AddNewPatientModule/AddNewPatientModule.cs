@@ -16,7 +16,7 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
         public override void RegisterTypes()
         {
             Container.RegisterType<IContentViewViewModel, ContentViewViewModel>();
-            Container.RegisterType<object, ContentView>(typeof(ContentView).FullName);
+            Container.RegisterTypeForNavigation<ContentView>();
         }
 
         public override void Initialize()

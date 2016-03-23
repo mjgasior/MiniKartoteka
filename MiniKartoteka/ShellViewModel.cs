@@ -3,6 +3,7 @@ using Prism.Mvvm;
 using Prism.Regions;
 using MiniKartoteka.Infrastructure.Concrete.Mvvm;
 using MiniKartoteka.Infrastructure;
+using System.Windows;
 
 namespace MiniKartoteka
 {
@@ -24,8 +25,13 @@ namespace MiniKartoteka
         {
             if (navigatePath != null)
             {
-                _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, navigatePath.ToString());
+                _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, navigatePath.ToString(), NavigateCompleted);
             }
+        }
+
+        private void NavigateCompleted(NavigationResult result)
+        {
+            MessageBox.Show(string.Format("Nawigacja {0} zakonczona", result.Context.Uri));
         }
         #endregion Commands
     }
