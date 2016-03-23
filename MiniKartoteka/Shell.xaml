@@ -14,7 +14,14 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" prism:RegionManager.RegionName="{x:Static inf:RegionNames.TOOLBAR_REGION}"/>
+        <ItemsControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.TOOLBAR_REGION}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        
         <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}" Grid.Row="1"/>
         <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="2"/>
     </Grid>
