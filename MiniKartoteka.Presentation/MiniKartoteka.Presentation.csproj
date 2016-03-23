@@ -45,9 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IToolbarMenuViewViewModel.cs" />
-    <Compile Include="Controls\ToolbarMenuView.xaml.cs">
-      <DependentUpon>ToolbarMenuView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Mvvm\BaseView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,12 +53,6 @@
       <Project>{7526f495-deb0-4f83-8ae8-80f0286b0358}</Project>
       <Name>MiniKartoteka.Infrastructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Controls\ToolbarMenuView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

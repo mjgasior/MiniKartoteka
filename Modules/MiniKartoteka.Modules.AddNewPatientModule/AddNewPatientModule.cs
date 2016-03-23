@@ -4,7 +4,6 @@ using MiniKartoteka.Modules.AddNewPatientModule.Views;
 using MiniKartoteka.Infrastructure;
 using MiniKartoteka.Modules.AddNewPatientModule.ViewModels;
 using MiniKartoteka.Infrastructure.Concrete.Mvvm;
-using MiniKartoteka.Presentation.Controls;
 using MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule
@@ -22,9 +21,6 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
 
         public override void Initialize()
         {
-            IRegion toolbarRegion = RegionManager.Regions[RegionNames.TOOLBAR_REGION];
-            toolbarRegion.Add(new ToolbarMenuView(new AddNewPatientMenuViewModel(RegionManager, Container)));
-
             IRegion navigationRegion = RegionManager.Regions[RegionNames.NAVIGATION_REGION];
             navigationRegion.Add(new AddNewPatientModuleButton());
 

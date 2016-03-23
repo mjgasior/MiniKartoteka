@@ -78,7 +78,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ContentViewViewModel.cs" />
     <Compile Include="ViewModels\PersonDetailsViewViewModel.cs" />
-    <Compile Include="ViewModels\ViewPatientMenuViewModel.cs" />
     <Compile Include="ViewPatientModule.cs" />
     <Compile Include="Views\ContentView.xaml.cs">
       <DependentUpon>ContentView.xaml</DependentUpon>

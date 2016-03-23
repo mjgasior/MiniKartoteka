@@ -79,7 +79,6 @@
     <Compile Include="Abstract\Views\IContentView.cs" />
     <Compile Include="AddNewPatientModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\AddNewPatientMenuViewModel.cs" />
     <Compile Include="ViewModels\ContentViewViewModel.cs" />
     <Compile Include="Views\AddNewPatientModuleButton.xaml.cs">
       <DependentUpon>AddNewPatientModuleButton.xaml</DependentUpon>
