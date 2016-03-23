@@ -9,6 +9,7 @@ using MiniKartoteka.Modules.AddNewPatientModule;
 using System;
 using MiniKartoteka.Modules.StatusBar;
 using MiniKartoteka.Business.Services;
+using MiniKartoteka.Modules.ViewPatientModule;
 
 namespace MiniKartoteka
 {
@@ -32,6 +33,7 @@ namespace MiniKartoteka
             RegisterModule(typeof(ServicesModule));
 
             RegisterModule(typeof(AddNewPatientModule));
+            RegisterModule(typeof(ViewPatientModule));
             RegisterModule(typeof(StatusBarModule));
         }
 

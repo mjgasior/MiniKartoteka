@@ -5,6 +5,7 @@ using MiniKartoteka.Infrastructure;
 using MiniKartoteka.Modules.AddNewPatientModule.ViewModels;
 using MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels;
 using MiniKartoteka.Infrastructure.Concrete.Mvvm;
+using MiniKartoteka.Presentation.Controls;
 
 namespace MiniKartoteka.Modules.AddNewPatientModule
 {
@@ -14,17 +15,11 @@ namespace MiniKartoteka.Modules.AddNewPatientModule
         {
             Container.RegisterType<IContentViewViewModel, ContentViewViewModel>();
 
-            IRegion toolbarRegion = RegionManager.Regions[RegionNames.TOOLBAR_REGION]; // View injection
-            toolbarRegion.Add(Container.Resolve<ToolbarView>());
-            toolbarRegion.Add(Container.Resolve<ToolbarView>());
-            toolbarRegion.Add(Container.Resolve<ToolbarView>());
-            toolbarRegion.Add(Container.Resolve<ToolbarView>());
-            toolbarRegion.Add(Container.Resolve<ToolbarView>());
-            toolbarRegion.Add(Container.Resolve<ToolbarView>());
+            IRegion toolbarRegion = RegionManager.Regions[RegionNames.TOOLBAR_REGION];
+            toolbarRegion.Add(new ToolbarMenuView(new AddNewPatientMenuViewModel(RegionManager, Container)));
 
             IRegion contentRegion = RegionManager.Regions[RegionNames.CONTENT_REGION];
             contentRegion.Add(Container.Resolve<ContentView>());
-
         }
     }
 }

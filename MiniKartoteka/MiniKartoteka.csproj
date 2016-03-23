@@ -144,6 +144,10 @@
       <Project>{6a63ac82-fb23-4132-88ea-14576a10c2d7}</Project>
       <Name>MiniKartoteka.Modules.StatusBar</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\MiniKartoteka.Modules.ViewPatientModule\MiniKartoteka.Modules.ViewPatientModule.csproj">
+      <Project>{70a6da5c-a9b6-403e-977a-b84aa708ed2b}</Project>
+      <Name>MiniKartoteka.Modules.ViewPatientModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
