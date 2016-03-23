@@ -18,6 +18,7 @@ namespace MiniKartoteka
         #region Overrides
         protected override DependencyObject CreateShell()
         {
+            Container.RegisterType<IShellViewModel, ShellViewModel>();
             return Container.Resolve<Shell>();
         }
 

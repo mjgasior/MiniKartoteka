@@ -74,6 +74,7 @@
     <Compile Include="Abstract\Mvvm\IView.cs" />
     <Compile Include="Abstract\Mvvm\IViewModel.cs" />
     <Compile Include="Abstract\Services\IPatientRepository.cs" />
+    <Compile Include="Concrete\Mvvm\ApplicationCommands.cs" />
     <Compile Include="Concrete\Mvvm\BaseModule.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

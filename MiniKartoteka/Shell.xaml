@@ -10,6 +10,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -21,8 +22,16 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
-        
-        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}" Grid.Row="1"/>
-        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="2"/>
+
+        <ItemsControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.NAVIGATION_REGION}" Grid.Row="1">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}" Grid.Row="2"/>
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="3"/>
     </Grid>
 </Window>
