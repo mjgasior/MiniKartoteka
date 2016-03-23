@@ -1,5 +1,4 @@
-﻿using System;
-using MiniKartoteka.Business.Models.Personal;
+﻿using MiniKartoteka.Business.Models.Personal;
 using MiniKartoteka.Modules.AddNewPatientModule.Abstract.ViewModels;
 using Prism.Commands;
 using Prism.Mvvm;

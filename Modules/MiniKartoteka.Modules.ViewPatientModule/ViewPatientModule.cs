@@ -11,17 +11,26 @@ namespace MiniKartoteka.Modules.ViewPatientModule
 {
     public class ViewPatientModule : BaseModule
     {
-        public override void Initialize()
+        public ViewPatientModule(IUnityContainer container, IRegionManager regionManager)
+            : base(container, regionManager) { }
+
+        public override void RegisterTypes()
         {
             Container.RegisterType<IContentViewViewModel, ContentViewViewModel>();
             Container.RegisterType<IPersonDetailsViewViewModel, PersonDetailsViewViewModel>();
 
+            Container.RegisterType<object, ContentView>(typeof(ContentView).FullName);
+        }
+
+        public override void Initialize()
+        {
             IRegion toolbarRegion = RegionManager.Regions[RegionNames.TOOLBAR_REGION];
             toolbarRegion.Add(new ToolbarMenuView(new ViewPatientMenuViewModel(RegionManager, Container)));
 
-            IRegion contentRegion = RegionManager.Regions[RegionNames.CONTENT_REGION];
-            contentRegion.Add(Container.Resolve<ContentView>());
+            IRegion navigationRegion = RegionManager.Regions[RegionNames.NAVIGATION_REGION];
+            navigationRegion.Add(new ViewPatientModuleButton());
 
+            RegionManager.RegisterViewWithRegion(RegionNames.CONTENT_REGION, typeof(ContentView));
             RegionManager.RegisterViewWithRegion(RegionNames.VIEWPATIENT_PERSONDETAILS_REGION, typeof(PersonDetailsView));
         }
     }

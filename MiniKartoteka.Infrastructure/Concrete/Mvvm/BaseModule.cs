@@ -6,12 +6,20 @@ namespace MiniKartoteka.Infrastructure.Concrete.Mvvm
 {
     public abstract class BaseModule : IModule
     {
-        [Dependency]
-        public IRegionManager RegionManager { get; set; }
-
-        [Dependency]
-        public IUnityContainer Container { get; set; }
+        public IRegionManager RegionManager { get; private set; }
+        public IUnityContainer Container { get; private set; }
 
         public abstract void Initialize();
+        public virtual void RegisterTypes()
+        {
+
+        }
+
+        public BaseModule(IUnityContainer container, IRegionManager regionManager)
+        {
+            Container = container;
+            RegionManager = regionManager;
+            RegisterTypes();
+        }
     }
 }

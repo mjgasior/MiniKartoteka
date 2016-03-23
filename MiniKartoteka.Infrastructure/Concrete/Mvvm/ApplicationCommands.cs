@@ -4,6 +4,6 @@ namespace MiniKartoteka.Infrastructure.Concrete.Mvvm
 {
     public class ApplicationCommands
     {
-        public static CompositeCommand NavigationCommand = new CompositeCommand();
+        public static CompositeCommand NavigateCommand = new CompositeCommand();
     }
 }

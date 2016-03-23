@@ -10,6 +10,9 @@ namespace MiniKartoteka.Modules.StatusBar
 {
     public class StatusBarModule : BaseModule
     {
+        public StatusBarModule(IUnityContainer container, IRegionManager regionManager)
+            : base(container, regionManager) { }
+
         public override void Initialize()
         {
             Container.RegisterType<IStatusBarViewViewModel, StatusBarViewViewModel>();

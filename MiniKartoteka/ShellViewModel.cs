@@ -16,7 +16,7 @@ namespace MiniKartoteka
         {
             _regionManager = regionManager;
             NavigateCommand = new DelegateCommand<object>(Navigate);
-            ApplicationCommands.NavigationCommand.RegisterCommand(NavigateCommand);
+            ApplicationCommands.NavigateCommand.RegisterCommand(NavigateCommand);
         }
 
         #region Commands
