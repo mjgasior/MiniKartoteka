@@ -36,13 +36,6 @@ namespace MiniKartoteka
             RegisterModule(typeof(ViewPatientModule));
             RegisterModule(typeof(StatusBarModule));
         }
-
-        protected override RegionAdapterMappings ConfigureRegionAdapterMappings()
-        {
-            RegionAdapterMappings mappings = base.ConfigureRegionAdapterMappings();
-            mappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
-            return mappings;
-        }
         #endregion Overrides
 
         #region Methods
@@ -54,7 +47,6 @@ namespace MiniKartoteka
                 ModuleType = module.AssemblyQualifiedName,
                 InitializationMode = InitializationMode.WhenAvailable
             });
-
         }
         #endregion Methods
     }

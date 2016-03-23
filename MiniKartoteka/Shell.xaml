@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://www.codeplex.com/prism"
         xmlns:inf="clr-namespace:MiniKartoteka.Infrastructure;assembly=MiniKartoteka.Infrastructure"
-        xmlns:local="clr-namespace:MiniKartoteka" Width="400" Height="400"
-        mc:Ignorable="d" Title="Shell">
+        xmlns:local="clr-namespace:MiniKartoteka" 
+        Width="400" Height="400" mc:Ignorable="d" Title="Shell">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
