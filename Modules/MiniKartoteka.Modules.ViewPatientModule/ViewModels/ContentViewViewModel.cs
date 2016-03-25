@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using MiniKartoteka.Business.Models.Personal;
 using MiniKartoteka.Modules.ViewPatientModule.Abstract.ViewModels;
+using Prism.Regions;
 
 namespace MiniKartoteka.Modules.ViewPatientModule.ViewModels
 {
-    public class ContentViewViewModel : IContentViewViewModel
+    public class ContentViewViewModel : IContentViewViewModel, INavigationAware
     {
         public IEnumerable<Person> People
         {
@@ -19,6 +20,20 @@ namespace MiniKartoteka.Modules.ViewPatientModule.ViewModels
                 };
             }
         }
+
+        #region INavigationAware
+        public bool IsNavigationTarget(NavigationContext navigationContext) => true;
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            
+        }
+        #endregion INavigationAware
 
         private Person MakePerson(string name)
         {
