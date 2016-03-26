@@ -1,29 +1,24 @@
-﻿using MiniKartoteka.Infrastructure.Concrete.Mvvm;
-using Prism.Regions;
-using Microsoft.Practices.Unity;
-using MiniKartoteka.Infrastructure;
-using MiniKartoteka.Modules.PatientsModule.Views;
+﻿using Microsoft.Practices.Unity;
 using MiniKartoteka.Modules.PatientsModule.ViewModels;
 using MiniKartoteka.Modules.PatientsModule.Abstract.ViewModels;
+using Prism.Modularity;
+using MiniKartoteka.Modules.PatientsModule.Views;
 
 namespace MiniKartoteka.Modules.PatientsModule
 {
-    public class PatientsModule : BaseModule
+    public class PatientsModule :IModule
     {
-        public PatientsModule(IUnityContainer container, IRegionManager regionManager)
-            : base(container, regionManager)
-        {
+        private readonly IUnityContainer _container;
 
+        public PatientsModule(IUnityContainer container)
+        {
+            _container = container;
         }
 
-        public override void RegisterTypes()
+        public void Initialize()
         {
-            Container.RegisterType<IPatientsContentViewModel, PatientsContentViewModel>();
-        }
-
-        public override void Initialize()
-        {
-            
+            _container.RegisterType<IPatientsContentViewModel, PatientsContentViewModel>();
+            _container.RegisterType<object, PatientsContentView>(nameof(PatientsContentView));
         }
     }
 }

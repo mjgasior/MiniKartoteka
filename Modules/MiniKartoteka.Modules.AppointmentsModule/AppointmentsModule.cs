@@ -1,19 +1,15 @@
-﻿using System;
-using MiniKartoteka.Infrastructure.Concrete.Mvvm;
-using Microsoft.Practices.Unity;
-using Prism.Regions;
+﻿using Prism.Modularity;
 
 namespace MiniKartoteka.Modules.AppointmentsModule
 {
-    public class AppointmentsModule : BaseModule
+    public class AppointmentsModule : IModule
     {
-        public AppointmentsModule(IUnityContainer container, IRegionManager regionManager) 
-            : base(container, regionManager)
+        public AppointmentsModule() 
         {
 
         }
 
-        public override void Initialize()
+        public void Initialize()
         {
             
         }

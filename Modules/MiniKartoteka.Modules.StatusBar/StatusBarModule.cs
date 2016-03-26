@@ -5,20 +5,27 @@ using Microsoft.Practices.Unity;
 using MiniKartoteka.Infrastructure;
 using Prism.Regions;
 using MiniKartoteka.Modules.StatusBar.Views;
+using Prism.Modularity;
 
 namespace MiniKartoteka.Modules.StatusBar
 {
-    public class StatusBarModule : BaseModule
+    public class StatusBarModule : IModule
     {
+        private readonly IUnityContainer _container;
+        private readonly IRegionManager _regionManager;
+
         public StatusBarModule(IUnityContainer container, IRegionManager regionManager)
-            : base(container, regionManager) { }
-
-        public override void Initialize()
         {
-            Container.RegisterType<IStatusBarViewViewModel, StatusBarViewViewModel>();
-            IRegion statusBarRegion = RegionManager.Regions[RegionNames.STATUSBAR_REGION];
+            _container = container;
+            _regionManager = regionManager;
+        }
 
-            statusBarRegion.Add(Container.Resolve<StatusBarView>());
+        public void Initialize()
+        {
+            _container.RegisterType<IStatusBarViewViewModel, StatusBarViewViewModel>();
+            IRegion statusBarRegion = _regionManager.Regions[RegionNames.STATUSBAR_REGION];
+
+            statusBarRegion.Add(_container.Resolve<StatusBarView>());
         }
     }
 }
