@@ -4,6 +4,7 @@ using MiniKartoteka.Modules.PatientsModule.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using System;
 
 namespace MiniKartoteka.Modules.PatientsModule.ViewModels
 {
@@ -11,17 +12,17 @@ namespace MiniKartoteka.Modules.PatientsModule.ViewModels
     {
         private readonly IRegionManager _regionManager;
 
-        public DelegateCommand NavigateCommand { get; set; }
+        public DelegateCommand<Type> NavigateCommand { get; set; }
 
         public PatientsContentViewModel(IRegionManager regionManager)
         {
-            NavigateCommand = new DelegateCommand(OnNavigate);
+            NavigateCommand = new DelegateCommand<Type>(OnNavigate);
             _regionManager = regionManager;
         }
 
-        private void OnNavigate()
+        private void OnNavigate(Type parameter)
         {
-            _regionManager.RequestNavigate(RegionNames.PATIENTSMODULE_CONTENT_REGION, nameof(PatientsListView));
+            _regionManager.RequestNavigate(RegionNames.PATIENTSMODULE_CONTENT_REGION, parameter.Name);
         }
     }
 }

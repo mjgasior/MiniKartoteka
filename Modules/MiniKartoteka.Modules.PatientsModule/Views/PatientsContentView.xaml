@@ -7,11 +7,13 @@
              xmlns:bv="clr-namespace:MiniKartoteka.Presentation.Mvvm;assembly=MiniKartoteka.Presentation"
              xmlns:inf="clr-namespace:MiniKartoteka.Infrastructure;assembly=MiniKartoteka.Infrastructure"
              xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:vm="clr-namespace:MiniKartoteka.Modules.PatientsModule.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UniformGrid>
         <Label>Patients Content View</Label>
-        <Button Command="{Binding NavigateCommand}">Navigate</Button>
+        <Button Command="{Binding NavigateCommand}" CommandParameter="{x:Type vm:AddPatientView}">Dodaj pacjenta</Button>
+        <Button Command="{Binding NavigateCommand}" CommandParameter="{x:Type vm:PatientsListView}">Lista pacjentów</Button>
         <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.PATIENTSMODULE_CONTENT_REGION}"/>
     </UniformGrid>
 </bv:BaseView>
