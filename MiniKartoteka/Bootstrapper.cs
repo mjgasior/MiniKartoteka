@@ -1,15 +1,11 @@
 ﻿using System.Windows;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
-using Prism.Regions;
-using System.Windows.Controls;
-using MiniKartoteka.Infrastructure;
 using Prism.Modularity;
-using MiniKartoteka.Modules.AddNewPatientModule;
 using System;
 using MiniKartoteka.Modules.StatusBar;
 using MiniKartoteka.Business.Services;
-using MiniKartoteka.Modules.ViewPatientModule;
+using MiniKartoteka.Modules.PatientsModule;
 
 namespace MiniKartoteka
 {
@@ -33,8 +29,7 @@ namespace MiniKartoteka
         {
             RegisterModule(typeof(ServicesModule));
 
-            RegisterModule(typeof(AddNewPatientModule));
-            RegisterModule(typeof(ViewPatientModule));
+            RegisterModule(typeof(PatientsModule));
             RegisterModule(typeof(StatusBarModule));
         }
         #endregion Overrides

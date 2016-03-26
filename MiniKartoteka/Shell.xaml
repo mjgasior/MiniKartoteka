@@ -9,20 +9,11 @@
         Width="400" Height="400" mc:Ignorable="d" Title="Shell">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
-        <ItemsControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.NAVIGATION_REGION}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-
-        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.CONTENT_REGION}" Grid.Row="1"/>
-        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="2"/>
+        
+        <TabControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.TABCONTROL_REGION}"/>
+        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="1"/>
     </Grid>
 </Window>
