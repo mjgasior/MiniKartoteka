@@ -1,15 +1,27 @@
-﻿using MiniKartoteka.Modules.PatientsModule.Abstract.ViewModels;
+﻿using MiniKartoteka.Infrastructure;
+using MiniKartoteka.Modules.PatientsModule.Abstract.ViewModels;
+using MiniKartoteka.Modules.PatientsModule.Views;
+using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Regions;
 
 namespace MiniKartoteka.Modules.PatientsModule.ViewModels
 {
     public class PatientsContentViewModel : BindableBase, IPatientsContentViewModel
     {
-        public string Title { get; set; }
+        private readonly IRegionManager _regionManager;
 
-        public PatientsContentViewModel()
+        public DelegateCommand NavigateCommand { get; set; }
+
+        public PatientsContentViewModel(IRegionManager regionManager)
         {
-            Title = "Tytuł";
+            NavigateCommand = new DelegateCommand(OnNavigate);
+            _regionManager = regionManager;
+        }
+
+        private void OnNavigate()
+        {
+            _regionManager.RequestNavigate(RegionNames.PATIENTSMODULE_CONTENT_REGION, nameof(PatientsListView));
         }
     }
 }

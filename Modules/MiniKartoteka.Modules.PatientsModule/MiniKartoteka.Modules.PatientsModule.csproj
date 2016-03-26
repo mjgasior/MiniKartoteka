@@ -75,15 +75,20 @@
   <ItemGroup>
     <Compile Include="Abstract\ViewModels\IAddPatientViewModel.cs" />
     <Compile Include="Abstract\ViewModels\IPatientsContentViewModel.cs" />
+    <Compile Include="Abstract\ViewModels\IPatientsListViewModel.cs" />
     <Compile Include="PatientsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AddPatientViewModel.cs" />
     <Compile Include="ViewModels\PatientsContentViewModel.cs" />
+    <Compile Include="ViewModels\PatientsListViewModel.cs" />
     <Compile Include="Views\AddPatientView.xaml.cs">
       <DependentUpon>AddPatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PatientsContentView.xaml.cs">
       <DependentUpon>PatientsContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientsListView.xaml.cs">
+      <DependentUpon>PatientsListView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PatientsContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientsListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
