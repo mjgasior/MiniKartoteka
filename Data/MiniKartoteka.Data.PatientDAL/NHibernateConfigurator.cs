@@ -25,12 +25,12 @@ namespace MiniKartoteka.Data.PatientDAL
             */
             var cfg = new Configuration();
             cfg.DataBaseIntegration(x => {
-                x.ConnectionString = "server=localhost;Port=5432;Database=hiberdemo;User Id=postgres;Password=123456;";
+                x.ConnectionString = "Server=127.0.0.1;Port=5432;Database=AAV;User Id=postgres;Password = 123456;";
                 x.Driver<NpgsqlDriver>();
                 x.Dialect<PostgreSQLDialect>();
                 });
-            //cfg.AddAssembly(Assembly.GetAssembly(typeof(Wwywalto)));
-            cfg.AddAssembly(Assembly.GetCallingAssembly());
+            cfg.AddAssembly(Assembly.GetAssembly(typeof(Wwywalto)));
+            //cfg.AddAssembly(Assembly.GetCallingAssembly());
             ISessionFactory sessionFactory = cfg.BuildSessionFactory();
 
             using (ISession session = sessionFactory.OpenSession())

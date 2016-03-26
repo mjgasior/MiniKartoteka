@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Data.PatientD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Data.DataBaseModels", "Data\MiniKartoteka.Data.DataBaseModels\MiniKartoteka.Data.DataBaseModels.csproj", "{E6678847-C4B8-4628-B5B6-FC7A18235FFE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A29B2242-15F1-4B24-A866-6A055E6233EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniKartoteka.Tests.Migrating", "Tests\MiniKartoteka.Tests.Migrating\MiniKartoteka.Tests.Migrating.csproj", "{15927DD5-5BE1-4ACF-A933-6E89B9576A4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{E6678847-C4B8-4628-B5B6-FC7A18235FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6678847-C4B8-4628-B5B6-FC7A18235FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6678847-C4B8-4628-B5B6-FC7A18235FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15927DD5-5BE1-4ACF-A933-6E89B9576A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15927DD5-5BE1-4ACF-A933-6E89B9576A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15927DD5-5BE1-4ACF-A933-6E89B9576A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15927DD5-5BE1-4ACF-A933-6E89B9576A4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +95,6 @@ Global
 		{61E38A1B-9593-467B-9D2C-7C2856147765} = {7CBE9310-E88D-4083-A339-E9354A072C65}
 		{90C208C5-0BB2-4C88-B7BB-A8BF9058F11C} = {9962C903-E0DA-4AB0-91F0-66D9A6532BEE}
 		{E6678847-C4B8-4628-B5B6-FC7A18235FFE} = {9962C903-E0DA-4AB0-91F0-66D9A6532BEE}
+		{15927DD5-5BE1-4ACF-A933-6E89B9576A4F} = {A29B2242-15F1-4B24-A866-6A055E6233EE}
 	EndGlobalSection
 EndGlobal
