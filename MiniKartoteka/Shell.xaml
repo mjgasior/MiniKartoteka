@@ -7,6 +7,11 @@
         xmlns:inf="clr-namespace:MiniKartoteka.Infrastructure;assembly=MiniKartoteka.Infrastructure"
         xmlns:local="clr-namespace:MiniKartoteka" 
         Width="400" Height="400" mc:Ignorable="d" Title="Shell">
+    <Window.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Header" Value="{Binding DataContext.Title}"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
