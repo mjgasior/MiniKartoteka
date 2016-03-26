@@ -138,6 +138,10 @@
       <Project>{7526f495-deb0-4f83-8ae8-80f0286b0358}</Project>
       <Name>MiniKartoteka.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\MiniKartoteka.Modules.AppointmentsModule\MiniKartoteka.Modules.AppointmentsModule.csproj">
+      <Project>{61e38a1b-9593-467b-9d2c-7c2856147765}</Project>
+      <Name>MiniKartoteka.Modules.AppointmentsModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\MiniKartoteka.Modules.PatientsModule\MiniKartoteka.Modules.PatientsModule.csproj">
       <Project>{30a57577-fdb4-49a3-80c3-562feecb17bd}</Project>
       <Name>MiniKartoteka.Modules.PatientsModule</Name>

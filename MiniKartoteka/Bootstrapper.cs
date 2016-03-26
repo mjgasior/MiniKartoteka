@@ -6,6 +6,7 @@ using System;
 using MiniKartoteka.Modules.StatusBar;
 using MiniKartoteka.Business.Services;
 using MiniKartoteka.Modules.PatientsModule;
+using MiniKartoteka.Modules.AppointmentsModule;
 
 namespace MiniKartoteka
 {
@@ -30,6 +31,7 @@ namespace MiniKartoteka
             RegisterModule(typeof(ServicesModule));
 
             RegisterModule(typeof(PatientsModule));
+            RegisterModule(typeof(AppointmentsModule));
             RegisterModule(typeof(StatusBarModule));
         }
         #endregion Overrides

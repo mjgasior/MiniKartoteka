@@ -6,7 +6,7 @@ namespace MiniKartoteka.Infrastructure.Concrete.Mvvm
     {
         public static void RegisterTypeForNavigation<T>(this IUnityContainer container)
         {
-            container.RegisterType(typeof(object), typeof(T), typeof(T).FullName);
+            container.RegisterType(typeof(object), typeof(T), typeof(T).Name);
         }
     }
 }
