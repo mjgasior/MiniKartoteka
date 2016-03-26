@@ -12,8 +12,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        
+
         <TabControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.TABCONTROL_REGION}"/>
         <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.STATUSBAR_REGION}" Grid.Row="1"/>
+
+        <Button Grid.Row="1" HorizontalAlignment="Right" Command="{Binding Navigate}">NAVIGUJ</Button>
     </Grid>
 </Window>

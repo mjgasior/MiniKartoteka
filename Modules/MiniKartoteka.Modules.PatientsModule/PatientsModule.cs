@@ -23,7 +23,7 @@ namespace MiniKartoteka.Modules.PatientsModule
 
         public override void Initialize()
         {
-            RegionManager.RegisterViewWithRegion(RegionNames.TABCONTROL_REGION, typeof(PatientsContentView));
+            
         }
     }
 }
