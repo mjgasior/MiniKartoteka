@@ -1,8 +1,10 @@
 ﻿using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using MiniKartoteka.Data.DataBaseModels.Models;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using System;
 using System.IO;
 
 namespace MiniKartoteka.Data.DataBaseModels
@@ -41,31 +43,65 @@ namespace MiniKartoteka.Data.DataBaseModels
 
         public static void Initialize()
         {
-            var sessionFactory = CreateSessionFactory();
+            ISessionFactory sessionFactory = CreateSessionFactory();
+
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    var maciek = new Patient { FirstName = "Maciek", LastName = "Harrison" };
+                    var joanna = new Patient { FirstName = "Joanna", LastName = "Torrance" };
+
+                    var rutinoscorbin = new Drug { Name = "Rutinoscorbin", Dosage = "1 tbletka" };
+                    var tussipini = new Drug { Name = "Tussi pini", Dosage = "1 lyzka" };
+                    var oxycort = new Drug { Name = "Oxycort", Dosage = "1 prysniecie" };
+                    var morfina = new Drug { Name = "Morfina", Dosage = "1 szczyk" };
+                    var placebo = new Drug { Name = "Placebo", Dosage = "ile wlezie" };
+                    var loperamid = new Drug { Name = "Loperamid", Dosage = "wedle poczeby" };
+
+                    var maciek1 = new Appointment { Date = DateTime.Now };
+                    var maciek2 = new Appointment { Date = DateTime.Now - TimeSpan.FromDays(5) };
+                    var joanna1 = new Appointment { Date = DateTime.Now - TimeSpan.FromDays(6) };
+                    var joanna2 = new Appointment { Date = DateTime.Now - TimeSpan.FromDays(7) };
+                    var maciek3 = new Appointment { Date = DateTime.Now - TimeSpan.FromDays(8) };
+
+                    // add products to the stores, there's some crossover in the products in each
+                    // store, because the store-product relationship is many-to-many
+                    AddDrugsToAppointment(maciek1, rutinoscorbin, tussipini);
+                    AddDrugsToAppointment(maciek2, rutinoscorbin, tussipini, morfina);
+                    AddDrugsToAppointment(maciek3, rutinoscorbin, tussipini, morfina, placebo);
+
+                    AddDrugsToAppointment(joanna1, loperamid, oxycort);
+                    AddDrugsToAppointment(joanna2, rutinoscorbin, morfina);
+
+                    // add employees to the stores, this relationship is a one-to-many, so one
+                    // employee can only work at one store at a time
+                    AddAppointmentsToPatient(maciek, maciek1, maciek2, maciek3);
+                    AddAppointmentsToPatient(joanna, joanna1, joanna2);
+
+                    // save both stores, this saves everything else via cascading
+                    session.SaveOrUpdate(maciek);
+                    session.SaveOrUpdate(joanna);
+
+                    transaction.Commit();
+                }
+            }
         }
 
+        public static void AddDrugsToAppointment(Appointment appointment, params Drug[] drugs)
+        {
+            foreach (var product in drugs)
+            {
+                appointment.AddDrug(product);
+            }
+        }
 
-        //public static void Configurate()
-        //{
-        //    var cfg = new Configuration();
-        //    cfg.DataBaseIntegration(x => {
-        //        x.ConnectionString = "Server=127.0.0.1;Port=5432;Database=AAV;User Id=postgres;Password = 123456;";
-        //        x.Driver<NpgsqlDriver>();
-        //        x.Dialect<PostgreSQLDialect>();
-        //    });
-        //    cfg.AddAssembly(Assembly.GetAssembly(typeof(Customer)));
-
-        //    ISessionFactory sessionFactory = cfg.BuildSessionFactory();
-
-        //    using (ISession session = sessionFactory.OpenSession())
-        //    {
-        //        using (ITransaction transaction = session.BeginTransaction())
-        //        {
-        //            // perfrom database logic
-
-        //            transaction.Commit();
-        //        }
-        //    }
-        //}
+        public static void AddAppointmentsToPatient(Patient patient, params Appointment[] appointments)
+        {
+            foreach (var employee in appointments)
+            {
+                patient.AddAppointment(employee);
+            }
+        }
     }
 }
