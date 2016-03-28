@@ -138,6 +138,10 @@
       <Project>{095297ae-aa48-4e36-9239-6fc8086e3600}</Project>
       <Name>MiniKartoteka.Business.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\MiniKartoteka.Data.DataBaseModels\MiniKartoteka.Data.DataBaseModels.csproj">
+      <Project>{e6678847-c4b8-4628-b5b6-fc7a18235ffe}</Project>
+      <Name>MiniKartoteka.Data.DataBaseModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\MiniKartoteka.Data.PatientDAL\MiniKartoteka.Data.PatientDAL.csproj">
       <Project>{90c208c5-0bb2-4c88-b7bb-a8bf9058f11c}</Project>
       <Name>MiniKartoteka.Data.PatientDAL</Name>
