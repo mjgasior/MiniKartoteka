@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace MiniKartoteka.Data.DataBaseModels.Models
 {
-    public class Drug
+    public class Drug : Entity
     {
-        public virtual Guid Id { get; protected set; }
         public virtual string Name { get; set; }
         public virtual string Dosage { get; set; }
         public virtual string Size { get; set; }

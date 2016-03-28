@@ -43,6 +43,7 @@ namespace MiniKartoteka.Data.DataBaseModels
 
         public static void Initialize()
         {
+            new Prescritpion();
             ISessionFactory sessionFactory = CreateSessionFactory();
 
             using (ISession session = sessionFactory.OpenSession())

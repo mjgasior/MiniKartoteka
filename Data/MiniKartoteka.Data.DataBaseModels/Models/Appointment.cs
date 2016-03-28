@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace MiniKartoteka.Data.DataBaseModels.Models
 {
-    public class Appointment
+    public class Appointment : Entity
     {
-        public virtual Guid Id { get; protected set; }
         public virtual DateTime Date { get; set; }
         public virtual string Summary { get; set; }
 
