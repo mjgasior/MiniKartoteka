@@ -3,12 +3,14 @@ using MiniKartoteka.Data.DataBaseModels.Models;
 
 namespace MiniKartoteka.Data.DataBaseModels.Mappings
 {
-    public class DrugMap : ClassMap<Drug>
+    public class PrescriptionMap : ClassMap<Prescription>
     {
-        public DrugMap()
+        public PrescriptionMap()
         {
             Id(x => x.Id).Column("Id").GeneratedBy.Guid();
-            Map(x => x.Name);
+            Map(x => x.Dosage);
+            References(x => x.Drug);
+            References(x => x.Appointment);            
         }
     }
 }

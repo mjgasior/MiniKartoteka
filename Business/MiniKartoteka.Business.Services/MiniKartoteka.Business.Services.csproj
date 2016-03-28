@@ -77,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\MiniKartoteka.Data.DataBaseModels\MiniKartoteka.Data.DataBaseModels.csproj">
+      <Project>{e6678847-c4b8-4628-b5b6-fc7a18235ffe}</Project>
+      <Name>MiniKartoteka.Data.DataBaseModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MiniKartoteka.Infrastructure\MiniKartoteka.Infrastructure.csproj">
       <Project>{7526f495-deb0-4f83-8ae8-80f0286b0358}</Project>
       <Name>MiniKartoteka.Infrastructure</Name>

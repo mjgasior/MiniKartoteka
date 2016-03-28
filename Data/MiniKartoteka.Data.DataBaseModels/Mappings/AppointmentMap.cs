@@ -11,10 +11,9 @@ namespace MiniKartoteka.Data.DataBaseModels.Mappings
             Map(x => x.Date);
             Map(x => x.Summary);
             References(x => x.Patient);
-
-            HasManyToMany(x => x.Drugs)
-                .Cascade.All()
-                .Table("PrescribedDrug");
+            HasMany(x => x.Prescriptions)
+                .Inverse()
+                .Cascade.All();
         }
     }
 }

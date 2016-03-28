@@ -2,6 +2,7 @@
 using Microsoft.Practices.Unity;
 using MiniKartoteka.Infrastructure.Abstract.Services;
 using MiniKartoteka.Business.Services.Concrete;
+using MiniKartoteka.Data.DataBaseModels;
 
 namespace MiniKartoteka.Business.Services
 {

@@ -7,7 +7,6 @@ using MiniKartoteka.Modules.StatusBar;
 using MiniKartoteka.Business.Services;
 using MiniKartoteka.Modules.PatientsModule;
 using MiniKartoteka.Modules.AppointmentsModule;
-using MiniKartoteka.Data.DataBaseModels;
 
 namespace MiniKartoteka
 {
@@ -16,8 +15,6 @@ namespace MiniKartoteka
         #region Overrides
         protected override DependencyObject CreateShell()
         {
-            NHibernateConfig.Initialize();
-
             Container.RegisterType<IShellViewModel, ShellViewModel>();
             return Container.Resolve<Shell>();
         }

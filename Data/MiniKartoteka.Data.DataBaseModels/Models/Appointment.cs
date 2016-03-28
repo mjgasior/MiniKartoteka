@@ -9,17 +9,17 @@ namespace MiniKartoteka.Data.DataBaseModels.Models
         public virtual string Summary { get; set; }
 
         public virtual Patient Patient { get; set; }
-        public virtual ICollection<Drug> Drugs { get; set; }
+        public virtual ICollection<Prescription> Prescriptions { get; set; }
 
         public Appointment()
         {
-            Drugs = new List<Drug>();
+            Prescriptions = new List<Prescription>();
         }
 
-        public virtual void AddDrug(Drug drug)
+        public virtual void AddPrescription(Prescription prescription)
         {
-            drug.Appointments.Add(this);
-            Drugs.Add(drug);
+            prescription.Appointment = this;
+            Prescriptions.Add(prescription);
         }
     }
 }
